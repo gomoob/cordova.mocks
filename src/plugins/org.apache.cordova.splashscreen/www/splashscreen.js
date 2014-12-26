@@ -1,4 +1,6 @@
-window.splashscreen = {
+window.navigator = window.navigator ? window.navigator : {};
+
+window.navigator.splashscreen = {
     
     hide : function() {
         
