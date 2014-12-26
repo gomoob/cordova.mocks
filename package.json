@@ -1,0 +1,43 @@
+{
+    "name": "cordova.mocks",
+    "description" : "Easy to use Apache Cordova mocks.",
+    "version": "0.1.0",
+    "homepage": "https://bitbucket.org/gomoob/powerspace-image-editor/overview",
+    "author": {
+        "name": "GoMoob",
+        "email": "contact@gomoob.com",
+        "url": "http://www.gomoob.com"
+    },
+    "keywords" : [
+        "gomoob", 
+        "cordova",
+        "phonegap",
+        "mock",
+        "stub",
+        "emulate",
+        "emulation",
+        "simulate",
+        "simulation"
+    ],
+    "main" : "build/cordova.mocks.min.js",
+    "repository": {
+        "type": "git",
+        "url": "https://bitbucket.org/gomoob/powerspace-image-editor.git"
+    },
+    "devDependencies": {
+        "blanket": "~1.1",
+        "bower": "~1.3",
+        "chai": "~1.10",
+        "grunt": "~0.4",
+        "grunt-blanket-mocha": "~0.4",
+        "grunt-check-modules": "~1.0",
+        "grunt-contrib-clean": "~0.6",
+        "grunt-contrib-connect": "~0.9",
+        "grunt-contrib-jshint": "~0.10",
+        "grunt-contrib-uglify": "~0.6",
+        "grunt-execute" : "~0.2",
+        "grunt-preprocess" : "~4.0",
+        "mocha": "~2.0",
+        "time-grunt" : "~1.0"
+    }
+}
