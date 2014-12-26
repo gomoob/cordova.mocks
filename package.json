@@ -2,7 +2,7 @@
     "name": "cordova.mocks",
     "description" : "Easy to use Apache Cordova mocks.",
     "version": "0.1.0",
-    "homepage": "https://bitbucket.org/gomoob/powerspace-image-editor/overview",
+    "homepage": "https://github.com/gomoob/cordova.mocks",
     "author": {
         "name": "GoMoob",
         "email": "contact@gomoob.com",
@@ -22,7 +22,7 @@
     "main" : "build/cordova.mocks.min.js",
     "repository": {
         "type": "git",
-        "url": "https://bitbucket.org/gomoob/powerspace-image-editor.git"
+        "url": "https://github.com/gomoob/cordova.mocks"
     },
     "devDependencies": {
         "blanket": "~1.1",
