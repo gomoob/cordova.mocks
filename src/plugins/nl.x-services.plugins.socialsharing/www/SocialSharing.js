@@ -1,12 +1,3 @@
-window = typeof window === 'undefined' ? {} : window;
-window.cordova = typeof window.cordova === 'undefined' ? {} : window.cordova;
-
-window.cordova.exec = function (success, fail, className, methodName, paras) {
-    if (success !== null) {
-        success();
-    }
-};
-
 // cordova = require('cordova');
 
 function SocialSharing() {
@@ -109,40 +100,3 @@ SocialSharing.install = function () {
 };
 
 // cordova.addConstructor(SocialSharing.install);
-
-/**
- * Mock version of the 'org.apache.cordova.splashscreen' plugin.
- * 
- * @author Baptiste GAILLARD (baptiste.gaillard@gomoob.com)
- * @see https://github.com/apache/cordova-plugin-splashscreen
- */
-
-// If no 'window.navigator' object exists we create one
-window.navigator = window.navigator ? window.navigator : {};
-
-// Create or overwrites the 'window.navigator.splashscreen' object
-window.navigator.splashscreen = {
-
-    /**
-     * Function used to hide the Apache Cordova / Adobe Phonegap splash screen.
-     * 
-     * @return {Boolean} True if the call is successful, false otherwise.
-     */
-    hide : function() {
-        
-        return true;
-        
-    },
-    
-    /**
-     * Function used to show the Apache Cordova / Adobe Phonegap splash screen.
-     * 
-     * @return {Boolean} True is the call is successful, false otherwise.
-     */
-    show : function() {
-        
-        return true;
-        
-    }
-                       
-};
