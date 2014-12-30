@@ -8,6 +8,9 @@
         "email": "contact@gomoob.com",
         "url": "http://www.gomoob.com"
     },
+    "bugs": {
+        "url": "https://github.com/gomoob/cordova.mocks/issues"
+    },
     "keywords" : [
         "gomoob", 
         "cordova",
@@ -24,6 +27,7 @@
         "type": "git",
         "url": "https://github.com/gomoob/cordova.mocks"
     },
+    "github": "https://github.com/gomoob/cordova.mocks",
     "scripts": {
         "test": "grunt",
         "coverage": "grunt coverage"
