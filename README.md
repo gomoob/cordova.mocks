@@ -1,7 +1,7 @@
 # Cordova.Mocks
 
 [![Travis Build Status](http://img.shields.io/travis/gomoob/cordova.mocks.svg?style=flat)](https://travis-ci.org/gomoob/cordova.mocks)
-[![Coverage Status](https://coveralls.io/repos/gomoob/cordova.mocks/badge.png?branch=master)](https://coveralls.io/r/gomoob/cordova.mocks?branch=master)
+[![Coverage Status](https://img.shields.io/coveralls/gomoob/cordova.mocks.svg?branch=master&style=flat)](https://coveralls.io/r/gomoob/cordova.mocks?branch=master)
 
 Easy to use Apache Cordova / Adobe Phonegap Mocks.
 
