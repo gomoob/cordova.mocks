@@ -16,6 +16,39 @@ module.exports = function(grunt) {
         clean : ['target/**/*'],
         
         /**
+         * Coveralls Task.
+         */
+        coveralls: {
+            options: {
+                src: 'coverage/lcov.info',
+                force: false
+            },
+            'default': {
+                src: 'coverage/lcov.info'
+            }
+        },
+        
+        /**
+         * Env Task.
+         */
+        env : {
+            coverage : {
+                APP_DIR_FOR_CODE_COVERAGE : '../../coverage/src/'
+            }
+        },
+        
+        /**
+         * Instrument Task.
+         */
+        instrument : {
+            files : 'src/**/*.js', 
+            options : {
+                lazy : true,
+                basePath : 'coverage'
+            }
+        },
+        
+        /**
          * JSHint Task.
          */
         jshint : {
@@ -25,6 +58,18 @@ module.exports = function(grunt) {
                     'src/**/*.js',
                     'test/**/*.js'
                 ]
+            }
+        },
+        
+        /**
+         * Make Report Task.
+         */
+        makeReport: {
+            src: 'coverage/**/*.json',
+            options: {
+                type: 'lcov',
+                dir: 'coverage',
+                print: 'detail'
             }
         },
         
@@ -56,6 +101,15 @@ module.exports = function(grunt) {
         }, 
         
         /**
+         * Store coverage Task.
+         */
+        storeCoverage: {
+            options: {
+                dir: 'coverage'
+            }
+        },
+        
+        /**
          * Task used to minify the library.
          */
         uglify: {   
@@ -65,6 +119,19 @@ module.exports = function(grunt) {
                 options: {
                     sourceMap: true
                 }
+            }
+        },
+        
+        /**
+         * Watch Task.
+         */
+        watch: {
+            tests: {
+                options: {
+                    spawn: false
+                },
+                files: ['src/**/*.js', 'test/spec/**/*.js'],
+                tasks: ['test']
             }
         }
 
@@ -99,7 +166,6 @@ module.exports = function(grunt) {
         'coverage', 
         'Generate coverage report for the library', 
         [
-            'jshint',
             'env:coverage',
             'instrument',
             'mochaTest',
