@@ -279,6 +279,240 @@ SocialSharing.install = function () {
 
 // cordova.addConstructor(SocialSharing.install);
 
+
+// Cordova Contacts Plugin
+/**
+ * Mock version of the 'org.apache.cordova.splashscreen' plugin.
+ * 
+ * @author Baptiste GAILLARD (baptiste.gaillard@gomoob.com)
+ * @see https://github.com/apache/cordova-plugin-splashscreen
+ */
+
+// If no 'window.navigator' object exists we create one
+window.navigator = window.navigator ? window.navigator : {};
+
+// Create or overwrites the 'window.navigator.contacts' object
+window.navigator.contacts = {
+
+    /**
+     * This function creates a new contact, but it does not persist the contact
+     * to device storage. To persist the contact to device storage, invoke
+     * contact.save().
+     * @param properties an object whose properties will be examined to create a new Contact
+     * @returns new Contact object
+     */
+    create : function(properties) {
+        
+    },
+
+    /**
+     * Returns an array of Contacts matching the search criteria.
+     * @param fields that should be searched
+     * @param successCB success callback
+     * @param errorCB error callback
+     * @param {ContactFindOptions} options that can be applied to contact searching
+     * @return array of Contacts matching search criteria
+     */
+    find : function(fields, successCB, errorCB, options) {
+        
+    },
+    
+    /**
+     * This function picks contact from phone using contact picker UI
+     * @returns new Contact object
+     */
+    pickContact: function (successCB, errorCB) {
+        
+    }
+
+};
+
+/**
+* Contains information about a single contact.
+* @constructor
+* @param {DOMString} id unique identifier
+* @param {DOMString} displayName
+* @param {ContactName} name
+* @param {DOMString} nickname
+* @param {Array.<ContactField>} phoneNumbers array of phone numbers
+* @param {Array.<ContactField>} emails array of email addresses
+* @param {Array.<ContactAddress>} addresses array of addresses
+* @param {Array.<ContactField>} ims instant messaging user ids
+* @param {Array.<ContactOrganization>} organizations
+* @param {DOMString} birthday contact's birthday
+* @param {DOMString} note user notes about contact
+* @param {Array.<ContactField>} photos
+* @param {Array.<ContactField>} categories
+* @param {Array.<ContactField>} urls contact's web sites
+*/
+window.Contact = function (id, displayName, name, nickname, phoneNumbers, emails, addresses,
+    ims, organizations, birthday, note, photos, categories, urls) {
+    this.id = id || null;
+    this.rawId = null;
+    this.displayName = displayName || null;
+    this.name = name || null; // ContactName
+    this.nickname = nickname || null;
+    this.phoneNumbers = phoneNumbers || null; // ContactField[]
+    this.emails = emails || null; // ContactField[]
+    this.addresses = addresses || null; // ContactAddress[]
+    this.ims = ims || null; // ContactField[]
+    this.organizations = organizations || null; // ContactOrganization[]
+    this.birthday = birthday || null;
+    this.note = note || null;
+    this.photos = photos || null; // ContactField[]
+    this.categories = categories || null; // ContactField[]
+    this.urls = urls || null; // ContactField[]
+};
+
+/**
+* Removes contact from device storage.
+* @param successCB success callback
+* @param errorCB error callback
+*/
+window.Contact.prototype.remove = function(successCB, errorCB) {};
+
+/**
+* Creates a deep copy of this Contact.
+* With the contact ID set to null.
+* @return copy of this Contact
+*/
+window.Contact.prototype.clone = function() {};
+
+/**
+* Persists contact to device storage.
+* @param successCB success callback
+* @param errorCB error callback
+*/
+window.Contact.prototype.save = function(successCB, errorCB) {};
+
+/**
+* Contact address.
+* @constructor
+* @param {DOMString} id unique identifier, should only be set by native code
+* @param formatted // NOTE: not a W3C standard
+* @param streetAddress
+* @param locality
+* @param region
+* @param postalCode
+* @param country
+*/
+
+window.ContactAddress = function(pref, type, formatted, streetAddress, locality, region, postalCode, country) {
+    this.id = null;
+    this.pref = (typeof pref != 'undefined' ? pref : false);
+    this.type = type || null;
+    this.formatted = formatted || null;
+    this.streetAddress = streetAddress || null;
+    this.locality = locality || null;
+    this.region = region || null;
+    this.postalCode = postalCode || null;
+    this.country = country || null;
+};
+
+/**
+ *  ContactError.
+ *  An error code assigned by an implementation when an error has occurred
+ * @constructor
+ */
+window.ContactError = function(err) {
+    this.code = (typeof err != 'undefined' ? err : null);
+};
+
+/**
+ * Error codes
+ */
+window.ContactError.UNKNOWN_ERROR = 0;
+window.ContactError.INVALID_ARGUMENT_ERROR = 1;
+window.ContactError.TIMEOUT_ERROR = 2;
+window.ContactError.PENDING_OPERATION_ERROR = 3;
+window.ContactError.IO_ERROR = 4;
+window.ContactError.NOT_SUPPORTED_ERROR = 5;
+window.ContactError.PERMISSION_DENIED_ERROR = 20;
+
+/**
+* Generic contact field.
+* @constructor
+* @param {DOMString} id unique identifier, should only be set by native code // NOTE: not a W3C standard
+* @param type
+* @param value
+* @param pref
+*/
+window.ContactField = function(type, value, pref) {
+    this.id = null;
+    this.type = (type && type.toString()) || null;
+    this.value = (value && value.toString()) || null;
+    this.pref = (typeof pref != 'undefined' ? pref : false);
+};
+    // Possible field names for various platforms.
+    // Some field names are platform specific
+
+    var fieldType = {
+        addresses:      "addresses",
+        birthday:       "birthday",
+        categories:     "categories",
+        country:        "country",
+        department:     "department",
+        displayName:    "displayName",
+        emails:         "emails",
+        familyName:     "familyName",
+        formatted:      "formatted",
+        givenName:      "givenName",
+        honorificPrefix: "honorificPrefix",
+        honorificSuffix: "honorificSuffix",
+        id:             "id",
+        ims:            "ims",
+        locality:       "locality",
+        middleName:     "middleName",
+        name:           "name",
+        nickname:       "nickname",
+        note:           "note",
+        organizations:  "organizations",
+        phoneNumbers:   "phoneNumbers",
+        photos:         "photos",
+        postalCode:     "postalCode",
+        region:         "region",
+        streetAddress:  "streetAddress",
+        title:          "title",
+        urls:           "urls"
+    };
+
+/**
+ * ContactFindOptions.
+ * @constructor
+ * @param filter used to match contacts against
+ * @param multiple boolean used to determine if more than one contact should be returned
+ */
+
+window.ContactFindOptions = function(filter, multiple, desiredFields) {
+    this.filter = filter || '';
+    this.multiple = (typeof multiple != 'undefined' ? multiple : false);
+    this.desiredFields = typeof desiredFields != 'undefined' ? desiredFields : [];
+};
+
+/**
+* Contact organization.
+* @constructor
+* @param {DOMString} id unique identifier, should only be set by native code // NOTE: not a W3C standard
+* @param name
+* @param dept
+* @param title
+* @param startDate
+* @param endDate
+* @param location
+* @param desc
+*/
+
+window.ContactOrganization = function(pref, type, name, dept, title) {
+    this.id = null;
+    this.pref = (typeof pref != 'undefined' ? pref : false);
+    this.type = type || null;
+    this.name = name || null;
+    this.department = dept || null;
+    this.title = title || null;
+};
+
+
+// Cordova Splashscreen Plugin
 /**
  * Mock version of the 'org.apache.cordova.splashscreen' plugin.
  * 
