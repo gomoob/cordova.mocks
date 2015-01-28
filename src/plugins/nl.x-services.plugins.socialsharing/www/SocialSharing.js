@@ -201,7 +201,7 @@ SocialSharing.prototype.shareVia = function (via, message, subject, fileOrFileAr
 
 SocialSharing.prototype._asArray = function (param) {
 
-    if (param == null) {
+    if (param === null) {
         param = [];
     } else if (typeof param === 'string') {
         param = new Array(param);
@@ -217,7 +217,7 @@ SocialSharing.prototype._getErrorCallback = function (ecb, functionName) {
     } else {
         return function (result) {
             console.log("The injected error callback of '" + functionName + "' received: " + JSON.stringify(result));
-        }
+        };
     }
 
 };
