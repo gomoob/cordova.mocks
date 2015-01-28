@@ -222,13 +222,17 @@ SocialSharing.prototype._getErrorCallback = function (ecb, functionName) {
 
 };
 
+/*
 SocialSharing.install = function () {
-
+*/
     if (!window.plugins) {
         window.plugins = {};
     }
 
     window.plugins.socialsharing = new SocialSharing();
+
+/*
     return window.plugins.socialsharing;
 
 };
+*/
