@@ -14,3 +14,6 @@
 
 // Cordova Splashscreen Plugin
 // @include plugins/org.apache.cordova.splashscreen/www/splashscreen.js
+
+// Cordova Pushwoosh Plugin 
+// @include plugins/com.pushwoosh.plugins.pushwoosh/www/PushNotification.js
