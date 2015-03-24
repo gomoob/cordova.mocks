@@ -7,6 +7,8 @@ window.cordova.exec = function (success, fail, className, methodName, paras) {
     }
 };
 
+
+// Cordova Facebook Connect Plugin
 window.facebookConnectPlugin = {
 
     getLoginStatus: function (s, f) {
@@ -176,6 +178,8 @@ window.facebookConnectPlugin = {
     }
 }());
 
+
+// Cordova Social Sharing Plugin
 /**
  * Mock version of the 'nl.x-services.plugins.socialsharing' plugin.
  * 
@@ -1140,4 +1144,569 @@ if (!window.plugins) {
 }
 
 window.plugins.pushNotification = new PushNotification();
+
+
+// Cordova Google Analytics Plugin
+function UniversalAnalyticsPlugin() {}
+
+UniversalAnalyticsPlugin.prototype.startTrackerWithId = function(id, success, error) {
+    if(typeof callback === 'function') {
+        success();   
+    }
+};
+
+UniversalAnalyticsPlugin.prototype.setUserId = function(id, success, error) {
+    if(typeof callback === 'function') {
+        success();   
+    }
+};
+
+/* enables verbose logging */
+UniversalAnalyticsPlugin.prototype.debugMode = function(success, error) {
+    if(typeof callback === 'function') {
+        success();   
+    }
+};
+
+UniversalAnalyticsPlugin.prototype.trackView = function(screen, success, error) {
+    if(typeof callback === 'function') {
+        success();   
+    }
+};
+
+UniversalAnalyticsPlugin.prototype.addCustomDimension = function(key, value, success, error) {
+    if(typeof callback === 'function') {
+        success();   
+    }
+};
+
+UniversalAnalyticsPlugin.prototype.trackEvent = function(category, action, label, value, success, error) {
+    if(typeof callback === 'function') {
+        success();   
+    }
+};
+
+/**
+ * https://developers.google.com/analytics/devguides/collection/android/v3/exceptions
+ */
+UniversalAnalyticsPlugin.prototype.trackException = function(description, fatal, success, error) {
+    if(typeof callback === 'function') {
+        success();   
+    }
+};
+
+UniversalAnalyticsPlugin.prototype.trackTiming = function(category, intervalInMilliseconds, name, label, success, error) {
+    if(typeof callback === 'function') {
+        success();   
+    }
+};
+
+/* Google Analytics e-Commerce Tracking */
+/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce */
+UniversalAnalyticsPlugin.prototype.addTransaction = function(transactionId, affiliation, revenue, tax, shipping, currencyCode, success, error) {
+    if(typeof callback === 'function') {
+        success();   
+    }
+};
+
+UniversalAnalyticsPlugin.prototype.addTransactionItem = function(transactionId, name ,sku, category, price, quantity, currencyCode, success, error) {
+    if(typeof callback === 'function') {
+        success();   
+    }
+};
+
+window.analytics = new UniversalAnalyticsPlugin();
+
+
+// Cordova Media Capture Plugin
+/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+*/
+
+
+/**
+ * The Capture interface exposes an interface to the camera and microphone of the hosting device.
+ */
+function Capture() {
+    this.supportedAudioModes = [];
+    this.supportedImageModes = [];
+    this.supportedVideoModes = [];
+}
+
+/**
+ * Launch audio recorder application for recording audio clip(s).
+ *
+ * @param {Function} successCB
+ * @param {Function} errorCB
+ * @param {CaptureAudioOptions} options
+ */
+Capture.prototype.captureAudio = function(successCallback, errorCallback, options){
+    if(typeof successCallback === 'function') {
+        var mediaFiles = [],
+            mediaFile = {
+                name: "capturedvideo.MOV",
+                localURL: "cdvfile://localhost/temporary/capture-T0x14d4fcb0.tmp.8XSTQO/capturedvideo.MOV",
+                type: "video/quicktime",
+                lastModifiedDate: 1401295725000,
+                size: 201139,
+                start: 0,
+                end: 0,
+                fullPath: "/private/var/mobile/Applications/4D0C764E-4299-495B-8E5A-E322ACBD4138/tmp/capture-T0x14d4fcb0.tmp.8XSTQO/capturedvideo.MOV"
+            };
+        
+        mediaFiles.push(mediaFile);
+        
+        successCallback(mediaFiles);   
+    }
+};
+
+/**
+ * Launch camera application for taking image(s).
+ *
+ * @param {Function} successCB
+ * @param {Function} errorCB
+ * @param {CaptureImageOptions} options
+ */
+Capture.prototype.captureImage = function(successCallback, errorCallback, options){
+    if(typeof successCallback === 'function') {
+        
+        var mediaFiles = [],
+        mediaFile = {
+            name: "presentation.jpeg",
+            localURL: "http://s3-eu-west-1.amazonaws.com/verygoodmoment/event/53/description/presentation.jpeg",
+            type: "video/quicktime",
+            lastModifiedDate: 1401295725000,
+            size: 201139,
+            start: 0,
+            end: 0,
+            fullPath: "http://s3-eu-west-1.amazonaws.com/verygoodmoment/event/53/description/presentation.jpeg"
+        };
+        
+        mediaFiles.push(mediaFile);
+        
+        successCallback(mediaFiles); 
+    }
+};
+
+/**
+ * Launch device camera application for recording video(s).
+ *
+ * @param {Function} successCB
+ * @param {Function} errorCB
+ * @param {CaptureVideoOptions} options
+ */
+Capture.prototype.captureVideo = function(successCallback, errorCallback, options){
+    if(typeof successCallback === 'function') {
+
+        var mediaFiles = [],
+        mediaFile = {
+            name: "capturedvideo.MOV",
+            localURL: "cdvfile://localhost/temporary/capture-T0x14d4fcb0.tmp.8XSTQO/capturedvideo.MOV",
+            type: "video/quicktime",
+            lastModifiedDate: 1401295725000,
+            size: 201139,
+            start: 0,
+            end: 0,
+            fullPath: "/private/var/mobile/Applications/4D0C764E-4299-495B-8E5A-E322ACBD4138/tmp/capture-T0x14d4fcb0.tmp.8XSTQO/capturedvideo.MOV"
+        };
+        
+        mediaFiles.push(mediaFile);
+        
+        successCallback();   
+    }
+};
+
+if (!navigator.device) {
+    navigator.device = {};
+}
+navigator.device.capture = new Capture();
+/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+*/
+
+/**
+ * Encapsulates all audio capture operation configuration options.
+ */
+window.CaptureAudioOptions = function(){
+    // Upper limit of sound clips user can record. Value must be equal or greater than 1.
+    this.limit = 1;
+    // Maximum duration of a single sound clip in seconds.
+    this.duration = 0;
+};
+
+/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+*/
+
+/**
+ * The CaptureError interface encapsulates all errors in the Capture API.
+ */
+window.CaptureError = function(c) {
+   this.code = c || null;
+};
+
+// Camera or microphone failed to capture image or sound.
+window.CaptureError.CAPTURE_INTERNAL_ERR = 0;
+// Camera application or audio capture application is currently serving other capture request.
+window.CaptureError.CAPTURE_APPLICATION_BUSY = 1;
+// Invalid use of the API (e.g. limit parameter has value less than one).
+window.CaptureError.CAPTURE_INVALID_ARGUMENT = 2;
+// User exited camera application or audio capture application before capturing anything.
+window.CaptureError.CAPTURE_NO_MEDIA_FILES = 3;
+// The requested capture operation is not supported.
+window.CaptureError.CAPTURE_NOT_SUPPORTED = 20;
+
+/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+*/
+
+/**
+ * Encapsulates all image capture operation configuration options.
+ */
+window.CaptureImageOptions = function(){
+    // Upper limit of images user can take. Value must be equal or greater than 1.
+    this.limit = 1;
+};
+
+/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+*/
+
+/**
+ * Encapsulates all video capture operation configuration options.
+ */
+window.CaptureVideoOptions = function(){
+    // Upper limit of videos user can record. Value must be equal or greater than 1.
+    this.limit = 1;
+    // Maximum duration of a single video clip in seconds.
+    this.duration = 0;
+};
+
+/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+*/
+
+/**
+ * Encapsulates a set of parameters that the capture device supports.
+ */
+window.ConfigurationData = function() {
+    // The ASCII-encoded string in lower case representing the media type.
+    this.type = null;
+    // The height attribute represents height of the image or video in pixels.
+    // In the case of a sound clip this attribute has value 0.
+    this.height = 0;
+    // The width attribute represents width of the image or video in pixels.
+    // In the case of a sound clip this attribute has value 0
+    this.width = 0;
+};
+
+/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+*/
+
+/**
+ * Represents a single file.
+ *
+ * name {DOMString} name of the file, without path information
+ * fullPath {DOMString} the full path of the file, including the name
+ * type {DOMString} mime type
+ * lastModifiedDate {Date} last modified date
+ * size {Number} size of the file in bytes
+ */
+window.MediaFile = function(name, localURL, type, lastModifiedDate, size){
+    this.name = name || '';
+    this.localURL = localURL || null;
+    this.type = type || null;
+    this.lastModified = lastModifiedDate || null;
+    // For backwards compatibility, store the timestamp in lastModifiedDate as well
+    this.lastModifiedDate = lastModifiedDate || null;
+    this.size = size || 0;
+
+    // These store the absolute start and end for slicing the file.
+    this.start = 0;
+    this.end = this.size;
+};
+
+/**
+ * Request capture format data for a specific file and type
+ *
+ * @param {Function} successCB
+ * @param {Function} errorCB
+ */
+window.MediaFile.prototype.getFormatData = function(successCallback, errorCallback) {
+    if(typeof successCallback === 'function') {
+        successCallback();
+    }
+};
+
+/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+*/
+
+/**
+ * MediaFileData encapsulates format information of a media file.
+ *
+ * @param {DOMString} codecs
+ * @param {long} bitrate
+ * @param {long} height
+ * @param {long} width
+ * @param {float} duration
+ */
+window.MediaFileData = function(codecs, bitrate, height, width, duration){
+    this.codecs = codecs || null;
+    this.bitrate = bitrate || 0;
+    this.height = height || 0;
+    this.width = width || 0;
+    this.duration = duration || 0;
+};
+
+
+// Cordova File Transfert Plugin
+/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+*/
+
+/**
+ * FileTransfer uploads a file to a remote server.
+ * @constructor
+ */
+window.FileTransfer = function() {
+    this._id = 1;
+    this.onprogress = null; // optional callback
+};
+
+/**
+* Given an absolute file path, uploads a file on the device to a remote server
+* using a multipart HTTP request.
+* @param filePath {String}           Full path of the file on the device
+* @param server {String}             URL of the server to receive the file
+* @param successCallback (Function}  Callback to be invoked when upload has completed
+* @param errorCallback {Function}    Callback to be invoked upon error
+* @param options {FileUploadOptions} Optional parameters such as file name and mimetype
+* @param trustAllHosts {Boolean} Optional trust all hosts (e.g. for self-signed certs), defaults to false
+*/
+FileTransfer.prototype.upload = function(filePath, server, successCallback, errorCallback, options, trustAllHosts) {
+    if(typeof successCallback === 'function') {
+        successCallback({
+            response : 'http://s3-eu-west-1.amazonaws.com/verygoodmoment/event/53/description/presentation.jpeg',
+            responseCode : 200,
+            bytesSent : 10
+        });   
+    }
+};
+
+/**
+ * Downloads a file form a given URL and saves it to the specified directory.
+ * @param source {String}          URL of the server to receive the file
+ * @param target {String}         Full path of the file on the device
+ * @param successCallback (Function}  Callback to be invoked when upload has completed
+ * @param errorCallback {Function}    Callback to be invoked upon error
+ * @param trustAllHosts {Boolean} Optional trust all hosts (e.g. for self-signed certs), defaults to false
+ * @param options {FileDownloadOptions} Optional parameters such as headers
+ */
+FileTransfer.prototype.download = function(source, target, successCallback, errorCallback, trustAllHosts, options) {
+    if(typeof successCallback === 'function') {
+        successCallback({});   
+    }
+};
+
+/**
+ * Aborts the ongoing file transfer on this object. The original error
+ * callback for the file transfer will be called if necessary.
+ */
+FileTransfer.prototype.abort = function() {};
+
+/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+*/
+
+/**
+ * FileTransferError
+ * @constructor
+ */
+window.FileTransferError = function(code, source, target, status, body, exception) {
+    this.code = code || null;
+    this.source = source || null;
+    this.target = target || null;
+    this.http_status = status || null;
+    this.body = body || null;
+    this.exception = exception || null;
+};
+
+window.FileTransferError.FILE_NOT_FOUND_ERR = 1;
+window.FileTransferError.INVALID_URL_ERR = 2;
+window.FileTransferError.CONNECTION_ERR = 3;
+window.FileTransferError.ABORT_ERR = 4;
+window.FileTransferError.NOT_MODIFIED_ERR = 5;
+
 
