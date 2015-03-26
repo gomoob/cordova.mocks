@@ -38,17 +38,9 @@ function Capture() {
  */
 Capture.prototype.captureAudio = function(successCallback, errorCallback, options){
     if(typeof successCallback === 'function') {
-        var mediaFiles = [],
-            mediaFile = {
-                name: "capturedvideo.MOV",
-                localURL: "cdvfile://localhost/temporary/capture-T0x14d4fcb0.tmp.8XSTQO/capturedvideo.MOV",
-                type: "video/quicktime",
-                lastModifiedDate: 1401295725000,
-                size: 201139,
-                start: 0,
-                end: 0,
-                fullPath: "/private/var/mobile/Applications/4D0C764E-4299-495B-8E5A-E322ACBD4138/tmp/capture-T0x14d4fcb0.tmp.8XSTQO/capturedvideo.MOV"
-            };
+        var mediaFiles = [];
+            
+        // TODO
         
         mediaFiles.push(mediaFile);
         
@@ -68,14 +60,14 @@ Capture.prototype.captureImage = function(successCallback, errorCallback, option
         
         var mediaFiles = [],
         mediaFile = {
-            name: "presentation.jpeg",
-            localURL: "http://s3-eu-west-1.amazonaws.com/verygoodmoment/event/53/description/presentation.jpeg",
+            name: "xl-2015-02-23-19:05:33.jpg",
+            localURL: "http://img.verygoodmoment.com/event/50/party/101808/xl-2015-02-23-19:05:33.jpg",
             type: "video/quicktime",
             lastModifiedDate: 1401295725000,
             size: 201139,
             start: 0,
             end: 0,
-            fullPath: "http://s3-eu-west-1.amazonaws.com/verygoodmoment/event/53/description/presentation.jpeg"
+            fullPath: "http://img.verygoodmoment.com/event/50/party/101808/xl-2015-02-23-19:05:33.jpg"
         };
         
         mediaFiles.push(mediaFile);
@@ -94,17 +86,9 @@ Capture.prototype.captureImage = function(successCallback, errorCallback, option
 Capture.prototype.captureVideo = function(successCallback, errorCallback, options){
     if(typeof successCallback === 'function') {
 
-        var mediaFiles = [],
-        mediaFile = {
-            name: "capturedvideo.MOV",
-            localURL: "cdvfile://localhost/temporary/capture-T0x14d4fcb0.tmp.8XSTQO/capturedvideo.MOV",
-            type: "video/quicktime",
-            lastModifiedDate: 1401295725000,
-            size: 201139,
-            start: 0,
-            end: 0,
-            fullPath: "/private/var/mobile/Applications/4D0C764E-4299-495B-8E5A-E322ACBD4138/tmp/capture-T0x14d4fcb0.tmp.8XSTQO/capturedvideo.MOV"
-        };
+        var mediaFiles = [];
+        
+        // TODO
         
         mediaFiles.push(mediaFile);
         
