@@ -1625,7 +1625,7 @@ window.FileTransfer = function() {
 FileTransfer.prototype.upload = function(filePath, server, successCallback, errorCallback, options, trustAllHosts) {
     if(typeof successCallback === 'function') {
         successCallback({
-            response : 'http://s3-eu-west-1.amazonaws.com/verygoodmoment/event/53/description/presentation.jpeg',
+            response : 'http://img.verygoodmoment.com/event/50/party/101808/xl-2015-02-23-19:05:33.jpg',
             responseCode : 200,
             bytesSent : 10
         });   
