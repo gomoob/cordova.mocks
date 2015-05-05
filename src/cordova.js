@@ -1,4 +1,5 @@
 window = typeof window === 'undefined' ? {} : window;
+document = typeof document === 'undefined' ? window.document || {} : document;
 window.cordova = typeof window.cordova === 'undefined' ? {} : window.cordova;
 
 window.cordova.exec = function (success, fail, className, methodName, paras) {
@@ -35,14 +36,14 @@ document.onkeypress = function(event) {
     var code = null;
 
     // Internet Explorer
-    if(event.which == null) {
+    if(event.which === null) {
 
         code = event.keyCode;
 
     }
 
     // Other browsers
-    else if (event.which != 0 && event.charCode != 0) {
+    else if (event.which !== 0 && event.charCode !== 0) {
 
         code = event.which;
 
