@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>cordova.mocks Samples</title>
+
+        <script src='cordova.js'></script>
+
+    </head>
+    <body>
+    </body>
+    
+    <script type="text/javascript">
+
+        var logEvent = function(event) {
+            console.log(event.type);
+        };
+    
+        document.addEventListener('pause',  logEvent, false);
+        document.addEventListener('resume', logEvent, false);
+
+        document.addEventListener('backbutton',  logEvent, false);
+        document.addEventListener('endcallbutton',  logEvent, false);
+        document.addEventListener('menubutton',  logEvent, false);
+        document.addEventListener('searchbutton', logEvent, false);
+        document.addEventListener('startcallbutton', logEvent, false);
+        document.addEventListener('volumedownbutton', logEvent, false);
+        document.addEventListener('volumeupbutton', logEvent, false);
+        
+    </script>
+    
+</html>
