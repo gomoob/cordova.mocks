@@ -38,3 +38,7 @@
 // Cordova File Transfert Plugin
 // @include plugins/org.apache.cordova.file-transfer/www/FileTransfer.js
 // @include plugins/org.apache.cordova.file-transfer/www/FileTransferError.js
+
+// Cordova Camera Plugin
+// @include plugins/org.apache.cordova.camera/www/Camera.js
+// @include plugins/org.apache.cordova.camera/www/CameraConstants.js
