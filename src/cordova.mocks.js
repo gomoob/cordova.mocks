@@ -42,3 +42,6 @@
 // Cordova Camera Plugin
 // @include plugins/org.apache.cordova.camera/www/Camera.js
 // @include plugins/org.apache.cordova.camera/www/CameraConstants.js
+
+// Cordova Dialogs Plugin
+// @include plugins/org.apache.cordova.dialogs/www/notification.js
